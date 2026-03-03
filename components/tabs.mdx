@@ -1,0 +1,53 @@
+---
+title: Tabs
+description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add tabs
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy and paste the component source">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte showLineNumbers
+<script lang="ts">
+  import * as Tabs from "$lib/components/ui/tabs/index.js";
+</script>
+```
+
+```svelte showLineNumbers
+<Tabs.Root value="account" class="w-[400px]">
+  <Tabs.List>
+    <Tabs.Trigger value="account">Account</Tabs.Trigger>
+    <Tabs.Trigger value="password">Password</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="account">
+    Make changes to your account here.
+  </Tabs.Content>
+  <Tabs.Content value="password">Change your password here.</Tabs.Content>
+</Tabs.Root>
+```
+
+## Links
+
+- [Source](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/tabs)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/tabs)
+- [API Reference](https://bits-ui.com/docs/components/tabs#api-reference)

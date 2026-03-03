@@ -1,0 +1,67 @@
+---
+title: Svelte
+description: Adding dark mode to your Svelte site.
+---
+
+<Steps>
+  <Step title="Install mode-watcher">
+    Start by installing `mode-watcher`:
+
+    ```bash
+    npm install mode-watcher
+    ```
+  </Step>
+
+  <Step title="Add the ModeWatcher component">
+    Import the `ModeWatcher` component and use it in your root layout:
+
+    ```svelte src/routes/+layout.svelte
+    <script lang="ts">
+      import "../app.css";
+      import { ModeWatcher } from "mode-watcher";
+      let { children } = $props();
+    </script>
+
+    <ModeWatcher />
+    {@render children?.()}
+    ```
+  </Step>
+
+  <Step title="Add a mode toggle">
+    Place a mode toggle on your site to toggle between light and dark mode.
+
+    <Note>
+      The following examples show different approaches to creating a mode toggle. Choose the one that fits your needs.
+    </Note>
+
+    ### Light Switch
+
+    A simple toggle switch for dark mode:
+
+    ```svelte
+    <script lang="ts">
+      import { toggleMode } from "mode-watcher";
+    </script>
+
+    <button on:click={toggleMode}>
+      Toggle Dark Mode
+    </button>
+    ```
+
+    ### Dropdown Menu
+
+    A dropdown menu with multiple theme options:
+
+    ```svelte
+    <script lang="ts">
+      import { setMode } from "mode-watcher";
+    </script>
+
+    <select on:change={(e) => setMode(e.target.value)}>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="system">System</option>
+    </select>
+    ```
+  </Step>
+</Steps>

@@ -1,97 +1,96 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: shadcn-svelte
+description: Accessible and customizable Svelte components built with Bits UI and Tailwind CSS.
 ---
 
-## Setting up
+<img
+  className="block"
+  src="https://raw.githubusercontent.com/huntabyte/shadcn-svelte/main/docs/static/opengraph-image.png"
+  alt="shadcn-svelte Hero"
+/>
 
-Get your documentation site up and running in minutes.
+## Build Your Component Library
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+An unofficial, community-led [Svelte](https://svelte.dev) port of [shadcn/ui](https://ui.shadcn.com). **This is not a component library. It is how you build your component library.**
 
-## Make it yours
+Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. Use this to build your own component library.
 
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
+<CardGroup cols={2}>
   <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
+    title="Get Started"
+    icon="rocket"
+    href="/introduction"
   >
-    Edit your docs locally and preview them in real time.
+    Learn about shadcn-svelte and its core principles
   </Card>
   <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
+    title="Installation"
+    icon="download"
+    href="/installation/index"
   >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+    Install shadcn-svelte in your project
   </Card>
   <Card
-    title="API documentation"
+    title="Components"
+    icon="grid"
+    href="/components/accordion"
+  >
+    Browse 50+ accessible UI components
+  </Card>
+  <Card
+    title="CLI"
     icon="terminal"
-    href="/api-reference/introduction"
+    href="/cli"
   >
-    Auto-generate API documentation from OpenAPI specifications.
+    Use the CLI to add components to your project
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Key Features
 
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
+<CardGroup cols={2}>
+  <Card title="Open Code" icon="code">
+    Full access to component code for complete customization
   </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
+  <Card title="Accessible" icon="universal-access">
+    Built with Bits UI for WAI-ARIA compliant components
   </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
+  <Card title="Customizable" icon="palette">
+    Styled with Tailwind CSS and CSS variables
   </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
+  <Card title="TypeScript" icon="t">
+    Full TypeScript support with Svelte 5
   </Card>
-</Columns>
+  <Card title="Dark Mode" icon="moon">
+    Built-in dark mode support
+  </Card>
+  <Card title="CLI Tool" icon="terminal">
+    Easy component installation with the CLI
+  </Card>
+</CardGroup>
 
-## Need inspiration?
+## Quick Start
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+Get up and running in minutes:
+
+<Steps>
+  <Step title="Install the CLI">
+    ```bash
+    npx shadcn-svelte@latest init
+    ```
+  </Step>
+  <Step title="Add a component">
+    ```bash
+    npx shadcn-svelte@latest add button
+    ```
+  </Step>
+  <Step title="Use in your app">
+    ```svelte
+    <script>
+      import { Button } from "$lib/components/ui/button";
+    </script>
+
+    <Button>Click me</Button>
+    ```
+  </Step>
+</Steps>

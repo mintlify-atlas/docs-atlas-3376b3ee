@@ -1,0 +1,165 @@
+---
+title: registry.json
+description: Schema for running your own component registry.
+---
+
+The `registry.json` schema is used to define your custom component registry.
+
+```json title="registry.json"
+{
+  "$schema": "https://shadcn-svelte.com/schema/registry.json",
+  "name": "shadcn-svelte",
+  "homepage": "https://shadcn-svelte.com",
+  "items": [
+    {
+      "name": "hello-world",
+      "type": "registry:block",
+      "title": "Hello World",
+      "description": "A simple hello world component.",
+      "files": [
+        {
+          "path": "src/lib/registry/blocks/hello-world/hello-world.svelte",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Definitions
+
+You can see the JSON Schema for `registry.json` [here](/schema/registry.json).
+
+### $schema
+
+The `$schema` property is used to specify the schema for the `registry.json` file.
+
+```json title="registry.json"
+{
+  "$schema": "https://shadcn-svelte.com/schema/registry.json"
+}
+```
+
+### name
+
+The `name` property is used to specify the name of your registry. This is used for data attributes and other metadata.
+
+```json title="registry.json"
+{
+  "name": "acme"
+}
+```
+
+### homepage
+
+The homepage of your registry. This is used for data attributes and other metadata.
+
+```json title="registry.json"
+{
+  "homepage": "https://acme.com"
+}
+```
+
+### items
+
+The `items` in your registry. Each item must implement the [registry-item schema specification](/schema/registry-item.json).
+
+```json title="registry.json"
+{
+  "items": [
+    {
+      "name": "hello-world",
+      "type": "registry:block",
+      "title": "Hello World",
+      "description": "A simple hello world component.",
+      "files": [
+        {
+          "path": "src/lib/registry/blocks/hello-world/hello-world.svelte",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
+```
+
+See the [registry-item schema documentation](/registry/registry-item-json) for more information.
+
+### aliases
+
+`aliases` define how your registry's internal import paths will be transformed when users install your components. These should match how you import components within your registry code.
+
+For example, if your registry's component has:
+
+```svelte
+<script lang="ts">
+  import { Button } from "@/lib/registry/ui/button/index.js";
+  import { cn } from "@/lib/utils.js";
+</script>
+```
+
+Then your `registry.json` should have matching aliases:
+
+```json title="registry.json"
+{
+  "aliases": {
+    "lib": "@/lib",
+    "ui": "@/lib/registry/ui",
+    "components": "@/lib/registry/components",
+    "utils": "@/lib/utils",
+    "hooks": "@/lib/hooks"
+  }
+}
+```
+
+When users install your component, these paths will be transformed according to their `components.json` configuration. The aliases you define here are the "source" paths that will be replaced.
+
+Default aliases (if you don't specify any):
+
+```json title="registry.json"
+{
+  "aliases": {
+    "lib": "$lib/registry/lib",
+    "ui": "$lib/registry/ui",
+    "components": "$lib/registry/components",
+    "utils": "$lib/utils",
+    "hooks": "$lib/registry/hooks"
+  }
+}
+```
+
+### overrideDependencies
+
+`overrideDependencies` lets you force specific version ranges for dependencies, overriding what `shadcn-svelte registry build` detects in your `package.json`.
+
+Common use cases:
+
+- Using latest pre-release versions: `"overrideDependencies": ["paneforge@next"]`
+- Pinning to specific versions: `"overrideDependencies": ["dep@1.5.0"]`
+
+<Note type="warning">
+**Warning**: Overriding dependencies can lead to version conflicts if not carefully managed. This option should be used sparingly.
+</Note>
+
+Example transformation:
+
+```json
+// Your registry's package.json
+{
+  "dependencies": {
+    "paneforge": "1.0.0-next.1"
+  }
+}
+```
+
+When the user installs your component, the latest `@next` version will be used instead of `1.0.0-next.1`
+
+```json
+{
+  "dependencies": {
+    "paneforge": "1.0.0-next.1", // overrideDependencies: []
+    "paneforge": "1.0.0-next.5" // overrideDependencies: ["paneforge@next"]
+  }
+}
+```

@@ -1,0 +1,45 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add avatar
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
+</script>
+
+<Avatar.Root>
+  <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
+  <Avatar.Fallback>CN</Avatar.Fallback>
+</Avatar.Root>
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/avatar)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/avatar)
+- [API Reference](https://bits-ui.com/docs/components/avatar#api-reference)

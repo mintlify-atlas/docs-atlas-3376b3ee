@@ -1,0 +1,59 @@
+---
+title: Menubar
+description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add menubar
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source files into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte showLineNumbers
+<script lang="ts">
+  import * as Menubar from "$lib/components/ui/menubar/index.js";
+</script>
+```
+
+```svelte showLineNumbers
+<Menubar.Root>
+  <Menubar.Menu>
+    <Menubar.Trigger>File</Menubar.Trigger>
+    <Menubar.Content>
+      <Menubar.Item>
+        New Tab
+        <Menubar.Shortcut>⌘T</Menubar.Shortcut>
+      </Menubar.Item>
+      <Menubar.Item>New Window</Menubar.Item>
+      <Menubar.Separator />
+      <Menubar.Item>Share</Menubar.Item>
+      <Menubar.Separator />
+      <Menubar.Item>Print</Menubar.Item>
+    </Menubar.Content>
+  </Menubar.Menu>
+</Menubar.Root>
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/menubar)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/menubar)
+- [API Reference](https://bits-ui.com/docs/components/menubar#api-reference)

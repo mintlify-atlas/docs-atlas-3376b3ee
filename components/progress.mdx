@@ -1,0 +1,44 @@
+---
+title: Progress
+description: Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add progress
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source files into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte showLineNumbers
+<script lang="ts">
+  import { Progress } from "$lib/components/ui/progress/index.js";
+</script>
+```
+
+```svelte showLineNumbers
+<Progress value={33} />
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/progress)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/progress)
+- [API Reference](https://bits-ui.com/docs/components/progress#api-reference)

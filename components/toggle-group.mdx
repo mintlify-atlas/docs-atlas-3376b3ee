@@ -1,0 +1,74 @@
+---
+title: Toggle Group
+description: A set of two-state buttons that can be toggled on or off.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add toggle-group
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy and paste the component source">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as ToggleGroup from "$lib/components/ui/toggle-group/index.js";
+</script>
+```
+
+```svelte
+<ToggleGroup.Root type="single">
+  <ToggleGroup.Item value="a">A</ToggleGroup.Item>
+  <ToggleGroup.Item value="b">B</ToggleGroup.Item>
+  <ToggleGroup.Item value="c">C</ToggleGroup.Item>
+</ToggleGroup.Root>
+```
+
+## Examples
+
+### Outline
+
+Toggle group with outline variant.
+
+### Single
+
+Single selection mode.
+
+### Small
+
+Smaller toggle group size.
+
+### Large
+
+Larger toggle group size.
+
+### Disabled
+
+Disabled toggle group state.
+
+### Spacing
+
+Use `spacing={2}` to add spacing between toggle group items.
+
+## Links
+
+- [Source](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/toggle-group)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/toggle-group)
+- [API Reference](https://bits-ui.com/docs/components/toggle-group#api-reference)

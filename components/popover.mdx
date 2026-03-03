@@ -1,0 +1,47 @@
+---
+title: Popover
+description: Displays rich content in a portal, triggered by a button.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add popover
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source files into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte showLineNumbers
+<script lang="ts">
+  import * as Popover from "$lib/components/ui/popover/index.js";
+</script>
+```
+
+```svelte showLineNumbers
+<Popover.Root>
+  <Popover.Trigger>Open</Popover.Trigger>
+  <Popover.Content>Place content for the popover here.</Popover.Content>
+</Popover.Root>
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/popover)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/popover)
+- [API Reference](https://bits-ui.com/docs/components/popover#api-reference)

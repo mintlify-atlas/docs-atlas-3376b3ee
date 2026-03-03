@@ -1,0 +1,45 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add slider
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy and paste the component source">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import { Slider } from "$lib/components/ui/slider/index.js";
+  let value = $state(33);
+</script>
+```
+
+```svelte
+<Slider type="single" bind:value max={100} step={1} />
+```
+
+## Links
+
+- [Source](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/slider)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/slider)
+- [API Reference](https://bits-ui.com/docs/components/slider#api-reference)

@@ -1,0 +1,53 @@
+---
+title: Navigation Menu
+description: A collection of links for navigating websites.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add navigation-menu
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source files into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte showLineNumbers
+<script lang="ts">
+  import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
+</script>
+```
+
+```svelte showLineNumbers
+<NavigationMenu.Root>
+  <NavigationMenu.List>
+    <NavigationMenu.Item>
+      <NavigationMenu.Trigger>Item One</NavigationMenu.Trigger>
+      <NavigationMenu.Content>
+        <NavigationMenu.Link>Link</NavigationMenu.Link>
+      </NavigationMenu.Content>
+    </NavigationMenu.Item>
+  </NavigationMenu.List>
+</NavigationMenu.Root>
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/navigation-menu)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/navigation-menu)
+- [API Reference](https://bits-ui.com/docs/components/navigation-menu#api-reference)

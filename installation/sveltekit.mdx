@@ -1,0 +1,68 @@
+---
+title: SvelteKit
+description: How to setup shadcn-svelte in a SvelteKit project.
+---
+
+<Steps>
+  <Step title="Create project">
+    Use the SvelteKit CLI to create a new project with TailwindCSS
+
+    ```bash
+    npx sv create my-app --add tailwindcss
+    ```
+  </Step>
+
+  <Step title="Setup path aliases">
+    If you are not using the default alias `$lib`, you'll need to update your `svelte.config.js` file to include those aliases.
+
+    ```ts title="svelte.config.js"
+    const config = {
+      // ... other config
+      kit: {
+        // ... other config
+        alias: {
+          "@/*": "./path/to/lib/*",
+        },
+      },
+    };
+    ```
+  </Step>
+
+  <Step title="Run the CLI">
+    ```bash
+    npx shadcn-svelte@latest init
+    ```
+  </Step>
+
+  <Step title="Configure components.json">
+    You will be asked a few questions to configure `components.json`:
+
+    ```txt
+    Which base color would you like to use? › Slate
+    Where is your global CSS file? (this file will be overwritten) › src/routes/layout.css
+    Configure the import alias for lib: › $lib
+    Configure the import alias for components: › $lib/components
+    Configure the import alias for utils: › $lib/utils
+    Configure the import alias for hooks: › $lib/hooks
+    Configure the import alias for ui: › $lib/components/ui
+    ```
+  </Step>
+
+  <Step title="That's it">
+    You can now start adding components to your project.
+
+    ```bash
+    npx shadcn-svelte@latest add button
+    ```
+
+    The command above will add the `Button` component to your project. You can then import it like this:
+
+    ```svelte
+    <script lang="ts">
+      import { Button } from "$lib/components/ui/button/index.js";
+    </script>
+
+    <Button>Click me</Button>
+    ```
+  </Step>
+</Steps>

@@ -1,0 +1,49 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add accordion
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as Accordion from "$lib/components/ui/accordion/index.js";
+</script>
+
+<Accordion.Root type="single">
+  <Accordion.Item value="item-1">
+    <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+    <Accordion.Content>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </Accordion.Content>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/accordion)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/accordion)
+- [API Reference](https://bits-ui.com/docs/components/accordion#api-reference)

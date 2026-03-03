@@ -1,0 +1,48 @@
+---
+title: Collapsible
+description: An interactive component which expands/collapses a panel.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add collapsible
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as Collapsible from "$lib/components/ui/collapsible/index.js";
+</script>
+
+<Collapsible.Root>
+  <Collapsible.Trigger>Can I use this in my project?</Collapsible.Trigger>
+  <Collapsible.Content>
+    Yes. Free to use for personal and commercial projects. No attribution
+    required.
+  </Collapsible.Content>
+</Collapsible.Root>
+```
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/collapsible)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/collapsible)
+- [API Reference](https://bits-ui.com/docs/components/collapsible#api-reference)

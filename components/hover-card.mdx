@@ -1,0 +1,43 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add hover-card
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install bits-ui">
+        ```bash
+        npm install bits-ui -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
+</script>
+```
+
+```svelte
+<HoverCard.Root>
+  <HoverCard.Trigger>Hover</HoverCard.Trigger>
+  <HoverCard.Content>
+    SvelteKit - Web development, streamlined
+  </HoverCard.Content>
+</HoverCard.Root>
+```

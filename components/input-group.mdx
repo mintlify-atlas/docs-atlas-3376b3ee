@@ -1,0 +1,91 @@
+---
+title: Input Group
+description: Display additional information or actions to an input or textarea.
+---
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add input-group
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install @lucide/svelte">
+        ```bash
+        npm install @lucide/svelte -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
+  import SearchIcon from "@lucide/svelte/icons/search";
+</script>
+```
+
+```svelte
+<InputGroup.Root>
+  <InputGroup.Input placeholder="Search..." />
+  <InputGroup.Addon>
+    <SearchIcon />
+  </InputGroup.Addon>
+  <InputGroup.Addon align="inline-end">
+    <InputGroup.Button>Search</InputGroup.Button>
+  </InputGroup.Addon>
+</InputGroup.Root>
+```
+
+## Examples
+
+### Icon
+
+Input group with icon addon.
+
+### Text
+
+Display additional text information alongside inputs.
+
+### Button
+
+Add buttons to perform actions within the input group.
+
+### Tooltip
+
+Add tooltips to provide additional context or help.
+
+### Textarea
+
+Input groups also work with textarea components. Use `block-start` or `block-end` for alignment.
+
+### Spinner
+
+Show loading indicators while processing input.
+
+### Label
+
+Add labels within input groups to improve accessibility.
+
+### Dropdown
+
+Pair input groups with dropdown menus for complex interactions.
+
+### Button Group
+
+Wrap input groups with button groups to create prefixes and suffixes.
+
+### Custom Input
+
+Add the `data-slot="input-group-control"` attribute to your custom input for automatic behavior and focus state handling.
+
+No style is applied to the custom input. Apply your own styles using the `class` prop.

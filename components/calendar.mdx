@@ -1,0 +1,82 @@
+---
+title: Calendar
+description: A calendar component that allows users to select dates.
+---
+
+## Blocks
+
+We have built a collection of 30+ calendar blocks that you can use to build your own calendar components.
+
+See call calendar blocks in the [Blocks Library](https://www.shadcn-svelte.com/blocks/calendar) page.
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@next add calendar
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Install dependencies">
+        ```bash
+        npm install bits-ui @internationalized/date -D
+        ```
+      </Step>
+      <Step title="Copy component code">
+        Copy and paste the component source code into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## About
+
+The `<Calendar />` component is built on top of the [Bits UI Calendar](https://www.bits-ui.com/docs/components/calendar) component, which uses the [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) package to handle dates.
+
+If you're looking for a range calendar, check out the [Range Calendar](/components/range-calendar) component.
+
+## Date Picker
+
+You can use the `<Calendar />` component to build a date picker. See the [Date Picker](/components/date-picker) page for more information.
+
+## Examples
+
+### Range Calendar
+
+### Month and Year Selector
+
+### Date of Birth Picker
+
+### Date and Time Picker
+
+### Natural Language Picker
+
+This component uses the `chrono-node` library to parse natural language dates.
+
+## Upgrade Guide
+
+You can upgrade to the latest version of the `<Calendar />` component by running the following command:
+
+```bash
+npx shadcn-svelte@next add calendar
+```
+
+When you're prompted to overwrite the existing files, select `Yes`. **If you have made any changes to the `Calendar` component, you will need to merge your changes with the new version.**
+
+### Installing Blocks
+
+After upgrading the `Calendar` component, you can add the new blocks with the following:
+
+```bash
+npx shadcn-svelte@next add calendar-02
+```
+
+This will add the latest version of the calendar blocks.
+
+## Links
+
+- [Source Code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/calendar)
+- [Bits UI Documentation](https://bits-ui.com/docs/components/calendar)
+- [API Reference](https://bits-ui.com/docs/components/calendar#api-reference)

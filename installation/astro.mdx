@@ -1,0 +1,136 @@
+---
+title: Astro
+description: How to setup shadcn-svelte in an Astro project.
+---
+
+<Steps>
+  <Step title="Create project">
+    Start by creating a new Astro project:
+
+    ```bash
+    npm create astro@latest
+    ```
+  </Step>
+
+  <Step title="Configure your Astro project">
+    You will be asked a few questions to configure your project:
+
+    ```bash
+    - Where should we create your new project?
+    ./your-app-name
+    - How would you like to start your new project?
+    Choose a starter template (or Empty)
+    - Install dependencies?
+    Yes
+    - Initialize a new git repository? (optional)
+    Yes/No
+    ```
+  </Step>
+
+  <Step title="Add Svelte to your project">
+    Install Svelte using the Astro CLI:
+
+    ```bash
+    npx astro add svelte
+    ```
+
+    <Note>
+      Answer `Yes` to all the question prompted by the CLI when installing Svelte.
+    </Note>
+  </Step>
+
+  <Step title="Add TailwindCSS to your project">
+    Add Tailwind CSS using the Astro CLI:
+
+    ```bash
+    npx astro add tailwind
+    ```
+
+    <Note>
+      Answer `Yes` to all the question prompted by the CLI when installing TailwindCSS.
+    </Note>
+  </Step>
+
+  <Step title="Import the global CSS file">
+    Import the `global.css` file in the `src/pages/index.astro` file:
+
+    ```astro title="src/pages/index.astro"
+    ---
+    import "../styles/global.css";
+    ---
+    ```
+  </Step>
+
+  <Step title="Setup path aliases">
+    Add the following code to the `tsconfig.json` file to resolve paths:
+
+    ```json title="tsconfig.json"
+    {
+      "compilerOptions": {
+        // ...
+        "baseUrl": ".",
+        "paths": {
+          "$lib": ["./src/lib"],
+          "$lib/*": ["./src/lib/*"]
+        }
+        // ...
+      }
+    }
+    ```
+
+    <Note>
+      If needed, adapt the path aliases to your specific needs ([learn more about it](https://docs.astro.build/en/guides/aliases/)).
+    </Note>
+  </Step>
+
+  <Step title="Run the CLI">
+    Run the `shadcn-svelte` init command to setup your project:
+
+    ```bash
+    npx shadcn-svelte@latest init
+    ```
+  </Step>
+
+  <Step title="Configure components.json">
+    You will be asked a few questions to configure `components.json`:
+
+    ```txt
+    Which base color would you like to use? › Slate
+    Where is your global CSS file? (this file will be overwritten) › src/styles/global.css
+    Configure the import alias for lib: › $lib
+    Configure the import alias for components: › $lib/components
+    Configure the import alias for utils: › $lib/utils
+    Configure the import alias for hooks: › $lib/hooks
+    Configure the import alias for ui: › $lib/components/ui
+    ```
+  </Step>
+
+  <Step title="That's it">
+    You can now start adding components to your project.
+
+    ```bash
+    npx shadcn-svelte@latest add button
+    ```
+
+    The command above will add the `Button` component to your project. You can then import it like this:
+
+    ```astro title="index.astro"
+    ---
+    import { Button } from "$lib/components/ui/button/index.js";
+    ---
+
+    <html lang="en">
+      <head>
+        <title>Astro</title>
+      </head>
+      <body>
+        <Button>Hello World</Button>
+      </body>
+    </html>
+    ```
+
+    <Note>
+      Remember to use the `client` directives inside `.astro` files when dealing with interactive components ([learn more about it](https://docs.astro.build/en/reference/directives-reference/#client-directives)).
+    </Note>
+  </Step>
+</Steps>
