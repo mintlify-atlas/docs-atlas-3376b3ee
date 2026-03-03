@@ -1,0 +1,129 @@
+---
+title: Typography
+description: Styles for headings, paragraphs, lists, and more.
+---
+
+We do not ship any typography styles by default. This page is an example of how you can use utility classes to style your text.
+
+## Headings
+
+### h1
+
+```svelte
+<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+  Heading 1
+</h1>
+```
+
+### h2
+
+```svelte
+<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+  Heading 2
+</h2>
+```
+
+### h3
+
+```svelte
+<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+  Heading 3
+</h3>
+```
+
+### h4
+
+```svelte
+<h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
+  Heading 4
+</h4>
+```
+
+## Paragraph
+
+```svelte
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  This is a paragraph of text with proper spacing and line height.
+</p>
+```
+
+## Blockquote
+
+```svelte
+<blockquote class="mt-6 border-l-2 pl-6 italic">
+  "This is a blockquote with border and italic styling."
+</blockquote>
+```
+
+## Table
+
+```svelte
+<div class="my-6 w-full overflow-y-auto">
+  <table class="w-full">
+    <thead>
+      <tr class="m-0 border-t p-0 even:bg-muted">
+        <th class="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
+          Header
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="m-0 border-t p-0 even:bg-muted">
+        <td class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+          Cell
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+## List
+
+```svelte
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+## Inline Code
+
+```svelte
+<code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
+  inline code
+</code>
+```
+
+## Lead
+
+```svelte
+<p class="text-xl text-muted-foreground">
+  A larger paragraph for lead text.
+</p>
+```
+
+## Large
+
+```svelte
+<div class="text-lg font-semibold">
+  Large text
+</div>
+```
+
+## Small
+
+```svelte
+<small class="text-sm font-medium leading-none">
+  Small text
+</small>
+```
+
+## Muted
+
+```svelte
+<p class="text-sm text-muted-foreground">
+  Muted paragraph text
+</p>
+```

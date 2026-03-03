@@ -1,0 +1,92 @@
+---
+title: Item
+description: A versatile component that you can use to display any content.
+---
+
+The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
+
+You can pretty much achieve the same result with the `div` element and some classes, but **I've built this so many times** that I decided to create a component for it. Now I use it all the time.
+
+## Installation
+
+<Tabs>
+  <Tab title="CLI">
+    ```bash
+    npx shadcn-svelte@latest add item
+    ```
+  </Tab>
+  <Tab title="Manual">
+    <Steps>
+      <Step title="Copy and paste the component source">
+        Copy and paste the component source files from the [shadcn-svelte repository](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/item) into your project.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as Item from "$lib/components/ui/item/index.js";
+</script>
+
+<Item.Root>
+  <Item.Header>Item Header</Item.Header>
+  <Item.Media />
+  <Item.Content>
+    <Item.Title>Item</Item.Title>
+    <Item.Description>Item</Item.Description>
+  </Item.Content>
+  <Item.Actions />
+  <Item.Footer>Item Footer</Item.Footer>
+</Item.Root>
+```
+
+## Item vs Field
+
+Use [Field](/components/field) if you need to display a form input such as a checkbox, input, radio, or select.
+
+If you only need to display content such as a title, description, and actions, use `Item`.
+
+## Examples
+
+### Variants
+
+The `Item` component supports different visual variants for various use cases.
+
+### Size
+
+The `Item` component has different sizes for different use cases. For example, you can use the `sm` size for a compact item or the default size for a standard item.
+
+### Icon
+
+Display an icon alongside your item content.
+
+### Avatar
+
+Include an avatar in your item layout.
+
+### Image
+
+Display an image within the item component.
+
+### Group
+
+Use `ItemGroup` to create a list of items.
+
+### Header
+
+Add a header to your item for additional context.
+
+### Link
+
+To render an item as a link, use the `child` snippet. The hover and focus states will be applied to the anchor element.
+
+### Dropdown
+
+Combine the item component with a dropdown menu for interactive actions.
+
+## Links
+
+- [Source code](https://github.com/huntabyte/shadcn-svelte/tree/next/sites/docs/src/lib/registry/ui/item)

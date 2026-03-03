@@ -70,6 +70,7 @@
               "components/input",
               "components/input-group",
               "components/input-otp",
+              "components/item",
               "components/kbd",
               "components/label",
               "components/menubar",
@@ -96,7 +97,8 @@
               "components/textarea",
               "components/toggle",
               "components/toggle-group",
-              "components/tooltip"
+              "components/tooltip",
+              "components/typography"
             ]
           },
           {
